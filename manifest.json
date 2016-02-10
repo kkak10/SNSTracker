@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "Fuck Facebook",
+  "description": "페이스북 접속을 막는 Chrome Extensions",
+  "version": "1.0",
+
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+
+  "background": {
+    "scripts": ["popup.js"],
+    "persistent": false
+  }
+}
