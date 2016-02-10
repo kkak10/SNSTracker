@@ -1,24 +1,24 @@
-// webpack.config.js
-'use strict';
-
+console.log(__dirname + "/build");
 module.exports = {
-  devtool: "eval",
-  resolve: {
-    modulesDirectories: ['src/js'],
-    extensions: ['', '.es6', '.js']
-  },
-  entry: {
-    'main': './src/main.js'
-  },
+  entry: "./src/main.es6",
   output: {
-    path: 'build/',
-    filename: 'main.js'
-  },
-  externals: {
+    path: __dirname + "/build",
+    filename: "main.js"
   },
   module: {
     loaders: [
-      {test: /\.es6$/, loader: 'babel-loader'}
+      { test: /\.css$/, loader: "style!css" },
+      {
+        test: /\.es6?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel', // 'babel-loader' is also a legal name to reference
+        query: {
+          presets: ['es2015']
+        }
+      },
+      {
+        test: /\.json$/, loader: "json!"
+      }
     ]
   }
 };

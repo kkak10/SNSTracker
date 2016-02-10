@@ -1,0 +1,1 @@
+require.context("./src", true, /.*/)("./" + expr + "");
